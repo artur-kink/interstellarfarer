@@ -1,0 +1,7 @@
+#IDE files
+fi
+
+#Compiled files
+*.o
+*.o.d
+debug/client
