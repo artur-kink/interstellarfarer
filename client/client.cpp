@@ -2,7 +2,6 @@
 
 Client::Client(){
     window = 0;
-
 }
 
 int Client::initSDL(){
@@ -23,7 +22,32 @@ void Client::cleanupSDL(){
 }
 
 void Client::run(){
-    while(1){
-        SDL_Delay(5);
+    Uint32 frameTime = SDL_GetTicks();
+    Uint32 updateAccumulator = 0;
+
+    //Main game loop
+    runClient = true;
+    while(runClient){
+        Uint32 currenTime = SDL_GetTicks();
+        updateAccumulator += currenTime - frameTime;
+        frameTime = currenTime;
+
+        //Check for window events
+        SDL_Event event;
+        while(SDL_PollEvent(&event)) {
+            if(event.type == SDL_WINDOWEVENT){
+                if(event.window.event == SDL_WINDOWEVENT_CLOSE){
+                    runClient = false;
+                    std::cout << "Window closing" << std::endl;
+                }
+            }
+        }
+
+        while(updateAccumulator >= 20){
+            updateAccumulator -= 20;
+        }
+
+        SDL_Delay(1);
     }
+
 }
