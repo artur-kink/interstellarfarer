@@ -6,7 +6,9 @@ Client::Client(){
 
 int Client::initSDL(){
     SDL_Init(SDL_INIT_VIDEO);
+    IMG_Init(IMG_INIT_PNG);
     window = SDL_CreateWindow("Test", 0, 0, 640, 480, SDL_WINDOW_SHOWN|SDL_WINDOW_OPENGL);
+    renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 
     //Check if window was created
     if(!window){
@@ -17,12 +19,14 @@ int Client::initSDL(){
 
 void Client::cleanupSDL(){
     //Cleanup
+    IMG_Quit();
+    SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
     SDL_Quit();
 }
 
 void Client::run(){
-    Uint32 frameTime = SDL_GetTicks();
+    frameTime = SDL_GetTicks();
     Uint32 updateAccumulator = 0;
 
     //Main game loop
@@ -45,9 +49,20 @@ void Client::run(){
 
         while(updateAccumulator >= 20){
             updateAccumulator -= 20;
+            update();
         }
 
+        draw();
         SDL_Delay(1);
     }
 
+}
+
+void Client::update(){
+
+}
+
+void Client::draw(){
+    SDL_RenderClear(renderer);
+    SDL_RenderPresent(renderer);
 }
