@@ -40,7 +40,7 @@ public:
 
     InputHandler();
 
-    InputHandler* I();
+    static InputHandler* I();
 
     void update(unsigned int time);
     bool isKeyPressed(Uint8 key);

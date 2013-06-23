@@ -16,6 +16,8 @@ public:
     Map();
 
     void init(byte w, byte h);
+
+    ~Map();
 };
 
 #endif

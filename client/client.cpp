@@ -2,7 +2,6 @@
 
 Client::Client(){
     window = 0;
-    map.init(11, 11);
 }
 
 int Client::initSDL(){
@@ -68,14 +67,14 @@ void Client::update(){
         int tileX = (inputHandler.mouseX/32);
         int tileY = (inputHandler.mouseY/32);
 
-        if(tileX < map.width && tileY < map.height)
-            map.tiles[tileY*map.width + tileX] = 1;
+        if(tileX < ship.map.width && tileY < ship.map.height)
+            ship.map.tiles[tileY*ship.map.width + tileX] = 1;
     }else if(inputHandler.rightDown){
         int tileX = (inputHandler.mouseX/32);
         int tileY = (inputHandler.mouseY/32);
 
-        if(tileX < map.width && tileY < map.height)
-            map.tiles[tileY*map.width + tileX] = 0;
+        if(tileX < ship.map.width && tileY < ship.map.height)
+            ship.map.tiles[tileY*ship.map.width + tileX] = 0;
     }
 
 
@@ -85,24 +84,7 @@ void Client::draw(){
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     SDL_RenderClear(renderer);
 
-    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-    SDL_Rect rect;
-    rect.w = 32; rect.h = 32;
-    for(byte r = 0; r < map.height; r++){
-        rect.y = r*32;
-        for(byte c = 0; c < map.width; c++){
-
-            if(map.tiles[r*map.width + c] == 1){
-                rect.x = c*32;
-                SDL_RenderFillRect(renderer, &rect);
-            }
-        }
-    }
-
-    SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-    rect.x = (inputHandler.mouseX/32)*32;
-    rect.y = (inputHandler.mouseY/32)*32;
-    SDL_RenderDrawRect(renderer, &rect);
+    Drawer::draw(renderer, &ship);
 
     SDL_RenderPresent(renderer);
 }

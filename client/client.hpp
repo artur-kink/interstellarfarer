@@ -5,8 +5,9 @@
 #include <SDL.h>
 #include <SDL_image.h>
 
-#include "../core/map.hpp"
+#include "../core/ship.hpp"
 #include "../core/inputhandler.hpp"
+#include "../core/drawer.hpp"
 
 ///
 /// Core game client code.
@@ -21,7 +22,7 @@ protected:
 
     InputHandler inputHandler;
 
-    Map map;
+    Ship ship;
 
 public:
     Client();

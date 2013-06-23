@@ -10,6 +10,14 @@ void Map::init(byte w, byte h){
 
     tiles = new byte[width*height];
     for(unsigned short i = 0; i < width*height; i++){
-        tiles[i] = i%2;
+        tiles[i] = 0;
+    }
+}
+
+
+Map::~Map(){
+    if(tiles){
+        delete tiles;
+        tiles = 0;
     }
 }

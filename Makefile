@@ -7,7 +7,8 @@ LIBRARIES=-lSDL2 -lpthread -lSDL2_image
 
 CORE_SOURCES=core/ship.cpp \
     core/map.cpp \
-    core/inputhandler.cpp
+    core/inputhandler.cpp \
+    core/drawer.cpp
 
 CLIENT_SOURCES=client/main.cpp \
     client/client.cpp \
