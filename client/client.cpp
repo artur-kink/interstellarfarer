@@ -20,9 +20,11 @@ int Client::initSDL(){
 
 void Client::cleanupSDL(){
     //Cleanup
-    IMG_Quit();
     SDL_DestroyRenderer(renderer);
+    renderer = 0;
     SDL_DestroyWindow(window);
+    window = 0;
+    IMG_Quit();
     SDL_Quit();
 }
 
@@ -38,6 +40,7 @@ void Client::run(){
         frameTime = currenTime;
 
         //Check for window events
+        SDL_PumpEvents();
         SDL_Event event;
         while(SDL_PollEvent(&event)) {
             if(event.type == SDL_WINDOWEVENT){
@@ -47,7 +50,7 @@ void Client::run(){
                 }
             }
         }
-
+        inputHandler.update(frameTime);
         while(updateAccumulator >= 20){
             updateAccumulator -= 20;
             update();
@@ -64,8 +67,10 @@ void Client::update(){
 }
 
 void Client::draw(){
+    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     SDL_RenderClear(renderer);
 
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
     SDL_Rect rect;
     rect.w = 32; rect.h = 32;
     for(byte r = 0; r < map.height; r++){
@@ -79,6 +84,10 @@ void Client::draw(){
         }
     }
 
+    SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
+    rect.x = (inputHandler.mouseX/32)*32;
+    rect.y = (inputHandler.mouseY/32)*32;
+    SDL_RenderDrawRect(renderer, &rect);
 
     SDL_RenderPresent(renderer);
 }

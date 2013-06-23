@@ -6,6 +6,7 @@
 #include <SDL_image.h>
 
 #include "../core/map.hpp"
+#include "../core/inputhandler.hpp"
 
 ///
 /// Core game client code.
@@ -17,6 +18,8 @@ protected:
 
     bool runClient;
     Uint32 frameTime;
+
+    InputHandler inputHandler;
 
     Map map;
 
