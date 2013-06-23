@@ -2,6 +2,7 @@
 
 Client::Client(){
     window = 0;
+    map.init(11, 11);
 }
 
 int Client::initSDL(){
@@ -64,5 +65,20 @@ void Client::update(){
 
 void Client::draw(){
     SDL_RenderClear(renderer);
+
+    SDL_Rect rect;
+    rect.w = 32; rect.h = 32;
+    for(byte r = 0; r < map.height; r++){
+        rect.y = r*32;
+        for(byte c = 0; c < map.width; c++){
+
+            if(map.tiles[r*map.width + c] == 1){
+                rect.x = c*32;
+                SDL_RenderFillRect(renderer, &rect);
+            }
+        }
+    }
+
+
     SDL_RenderPresent(renderer);
 }

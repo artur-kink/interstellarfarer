@@ -5,6 +5,8 @@
 #include <SDL.h>
 #include <SDL_image.h>
 
+#include "../core/map.hpp"
+
 ///
 /// Core game client code.
 ///
@@ -15,6 +17,8 @@ protected:
 
     bool runClient;
     Uint32 frameTime;
+
+    Map map;
 
 public:
     Client();

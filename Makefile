@@ -5,7 +5,8 @@ RM=rm
 INCLUDES=-I/home/malo/SDL2/include/ -I/home/malo/SDL2_image/ -I/usr/local/include/SDL2/
 LIBRARIES=-lSDL2 -lpthread -lSDL2_image
 
-CORE_SOURCES=core/ship.cpp
+CORE_SOURCES=core/ship.cpp \
+    core/map.cpp
 
 CLIENT_SOURCES=client/main.cpp \
     client/client.cpp \
