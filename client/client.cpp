@@ -64,6 +64,21 @@ void Client::run(){
 
 void Client::update(){
 
+    if(inputHandler.leftDown){
+        int tileX = (inputHandler.mouseX/32);
+        int tileY = (inputHandler.mouseY/32);
+
+        if(tileX < map.width && tileY < map.height)
+            map.tiles[tileY*map.width + tileX] = 1;
+    }else if(inputHandler.rightDown){
+        int tileX = (inputHandler.mouseX/32);
+        int tileY = (inputHandler.mouseY/32);
+
+        if(tileX < map.width && tileY < map.height)
+            map.tiles[tileY*map.width + tileX] = 0;
+    }
+
+
 }
 
 void Client::draw(){
