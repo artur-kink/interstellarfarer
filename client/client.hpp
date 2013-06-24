@@ -9,6 +9,8 @@
 #include "../core/inputhandler.hpp"
 #include "../core/drawer.hpp"
 
+#include "../core/modulelist.hpp"
+
 ///
 /// Core game client code.
 ///
@@ -24,6 +26,7 @@ protected:
 
     Ship ship;
 
+    ModuleList modules;
 public:
     Client();
 

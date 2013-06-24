@@ -2,13 +2,15 @@
 CC=g++
 RM=rm
 
-INCLUDES=-I/home/malo/SDL2/include/ -I/home/malo/SDL2_image/ -I/usr/local/include/SDL2/
-LIBRARIES=-lSDL2 -lpthread -lSDL2_image
+INCLUDES=-I/home/malo/SDL2/include/ -I/home/malo/SDL2_image/ -I/usr/local/include/SDL2/ -I/home/malo/if/pugixml/src/
+LIBRARIES=-lSDL2 -lpthread -lSDL2_image -L/home/malo/if/pugixml/ -lpugixml
 
 CORE_SOURCES=core/ship.cpp \
     core/map.cpp \
     core/inputhandler.cpp \
-    core/drawer.cpp
+    core/drawer.cpp \
+    core/module.cpp \
+    core/modulelist.cpp
 
 CLIENT_SOURCES=client/main.cpp \
     client/client.cpp \
