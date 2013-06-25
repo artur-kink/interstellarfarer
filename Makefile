@@ -9,6 +9,7 @@ CORE_SOURCES=core/ship.cpp \
     core/map.cpp \
     core/inputhandler.cpp \
     core/drawer.cpp \
+    core/moduletile.cpp \
     core/module.cpp \
     core/modulelist.cpp
 

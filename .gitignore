@@ -1,7 +1,15 @@
 #IDE files
-fi
+fi/
 
 #Compiled files
 *.o
 *.o.d
+*.a
+*.tar.gz
+*.so.*
+*.so
+*.la
+*.swp
 debug/client
+
+pugixml/*

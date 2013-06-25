@@ -1,8 +1,19 @@
+
 <modules>
-    
-    <module name="rocket">
-        <tile x="0" y="0" />
-        <tile x="1" y="0" />
+    <module name="sample" price="1" health="1" power="1" extension="0" extendable="1" store_icon="rocket.png" hud_icon="rocket.png" overlay_icon="rocket.png" >
+        <tiles>
+             <tile x="0" y="0" type="manned" />
+             <tile x="0" y="1" type="free" />
+        </tiles>
+        <extensions limit="1">
+             <extension name="sample_extension" type="connected"/>
+        </extensions>
     </module>
 
+    <module name="sample_extension" price="10" power="1" power="1" extension="1" extendable="0" store_icon="rocket.png" hud_icon="rocket.png">
+        <tiles>
+            <tile x="0" y="0" type="free" />
+        </tiles>
+    </module>
 </modules>
+
