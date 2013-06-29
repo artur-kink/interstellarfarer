@@ -11,6 +11,8 @@
 
 #include "../core/modulelist.hpp"
 
+#include "../core/graphics/SpriteManager.hpp"
+
 ///
 /// Core game client code.
 ///
@@ -27,6 +29,8 @@ protected:
     Ship ship;
 
     ModuleList modules;
+
+    SpriteManager spriteManager;
 public:
     Client();
 

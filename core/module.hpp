@@ -2,6 +2,9 @@
 #define _MODULE_
 
 #include <string>
+#include <vector>
+
+#include "moduletile.hpp"
 
 class Module{
 public:

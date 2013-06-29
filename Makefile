@@ -11,7 +11,14 @@ CORE_SOURCES=core/ship.cpp \
     core/drawer.cpp \
     core/moduletile.cpp \
     core/module.cpp \
-    core/modulelist.cpp
+    core/modulelist.cpp \
+    core/graphics/BaseSprite.cpp \
+    core/graphics/StaticSprite.cpp \
+    core/graphics/AnimatedSprite.cpp \
+    core/graphics/LayeredSprite.cpp \
+    core/graphics/RenderedSprite.cpp \
+    core/graphics/SpriteSet.cpp \
+    core/graphics/SpriteManager.cpp
 
 CLIENT_SOURCES=client/main.cpp \
     client/client.cpp \

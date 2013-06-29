@@ -1,0 +1,9 @@
+<spriteset>
+    <spritesheets>
+        <spritesheet name="rocket.bmp" />
+    </spritesheets>
+
+    <sprites>
+        <sprite name="rocket" sheet="rocket.bmp" x="0" y="0" width="32" height="32" />
+    </sprites>
+</spriteset>

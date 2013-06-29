@@ -10,7 +10,7 @@
 #include "module.hpp"
 
 /**
- *
+ * List of available module types.
  */
 class ModuleList{
 public:

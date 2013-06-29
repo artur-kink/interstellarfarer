@@ -5,8 +5,13 @@ Client::Client(){
 }
 
 int Client::initSDL(){
-    SDL_Init(SDL_INIT_VIDEO);
-    IMG_Init(IMG_INIT_PNG);
+    int initResult = SDL_Init(SDL_INIT_VIDEO);
+
+    initResult = IMG_Init(IMG_INIT_PNG);
+    if(initResult&IMG_INIT_PNG != IMG_INIT_PNG){
+        std::cout << "Failed to init IMG: " << IMG_GetError() << std::endl;
+    }
+
     window = SDL_CreateWindow("Test", 0, 0, 640, 480, SDL_WINDOW_SHOWN|SDL_WINDOW_OPENGL);
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 
@@ -14,6 +19,10 @@ int Client::initSDL(){
     if(!window){
         return 1;
     }
+
+    spriteManager.renderer = renderer;
+    spriteManager.loadRawSprites("sprites");
+
     return 0;
 }
 
@@ -76,8 +85,6 @@ void Client::update(){
         if(tileX < ship.map.width && tileY < ship.map.height)
             ship.map.tiles[tileY*ship.map.width + tileX] = 0;
     }
-
-
 }
 
 void Client::draw(){
@@ -85,6 +92,11 @@ void Client::draw(){
     SDL_RenderClear(renderer);
 
     Drawer::draw(renderer, &ship);
+
+    SDL_Rect rect;
+    rect.w = rect.h = 32;
+    rect.x = rect.y = 0;
+    spriteManager.getSprite("rocket")->draw(renderer, &rect);
 
     SDL_RenderPresent(renderer);
 }

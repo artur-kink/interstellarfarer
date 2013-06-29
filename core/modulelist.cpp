@@ -1,11 +1,16 @@
 #include "modulelist.hpp"
 
+/**
+ * Initialize module list by loading all module definitions in
+ * modules.xml
+ */
 ModuleList::ModuleList(){
 
     std::cout << "Loading modules" << std::endl;
     pugi::xml_document doc;
     pugi::xml_parse_result loadResult = doc.load_file("modules.xml");
 
+    //Iterate all <module> nodes in modules
 	pugi::xml_node modulesNode = doc.first_child();
 	for (pugi::xml_node moduleNode = modulesNode.first_child(); moduleNode; moduleNode = moduleNode.next_sibling())
     {
@@ -38,6 +43,7 @@ ModuleList::ModuleList(){
         //Get module tiles.
         std::cout << "\tTiles:" << std::endl;
         pugi::xml_node tilesNode = moduleNode.child("tiles");
+        //Iterate all <tiles> nodes
         for (pugi::xml_node tileNode = tilesNode.first_child(); tileNode; tileNode = tileNode.next_sibling())
         {
             ModuleTile tile;
