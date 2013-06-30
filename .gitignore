@@ -1,5 +1,17 @@
 #IDE files
 fi/
+*.swp
+*.user
+*.vcxproj.*
+*.sdf
+*.suo
+*.opensdf
+*.idb
+*.pdb
+*.ilk
+*.exe*
+*lastbuildstate
+ipch/*
 
 #Compiled files
 *.o
@@ -9,7 +21,14 @@ fi/
 *.so.*
 *.so
 *.la
-*.swp
+*.obj
+*.lib
+*.dll
+*.exe
+*.log
+*.tlog
 debug/client
 
 pugixml/*
+SDL2_image-2.0.0/*
+SDL2-2.0.0/*

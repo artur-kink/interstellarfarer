@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{AA144CC1-F433-4FD0-B1EE-FD98DA4CF1AE}</ProjectGuid>
+    <RootNamespace>interstellarfarer</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\debug</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\debug</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>C:\Users\malo\Documents\GitHub\interstellarfarer\SDL2_image-2.0.0\include;C:\Users\malo\Documents\GitHub\interstellarfarer\SDL2-2.0.0\include;C:\code\pugixml\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\code\pugixml;C:\Users\malo\Documents\GitHub\interstellarfarer\SDL2_image-2.0.0\lib\x86;C:\Users\malo\Documents\GitHub\interstellarfarer\SDL2-2.0.0\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <EntryPointSymbol>SDL_main</EntryPointSymbol>
+      <AdditionalDependencies>SDL2_image.lib;SDL2.lib;pugixmld.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="client\client.cpp" />
+    <ClCompile Include="client\main.cpp" />
+    <ClCompile Include="core\drawer.cpp" />
+    <ClCompile Include="core\graphics\AnimatedSprite.cpp" />
+    <ClCompile Include="core\graphics\BaseSprite.cpp" />
+    <ClCompile Include="core\graphics\LayeredSprite.cpp" />
+    <ClCompile Include="core\graphics\RenderedSprite.cpp" />
+    <ClCompile Include="core\graphics\SpriteManager.cpp" />
+    <ClCompile Include="core\graphics\SpriteSet.cpp" />
+    <ClCompile Include="core\graphics\StaticSprite.cpp" />
+    <ClCompile Include="core\inputhandler.cpp" />
+    <ClCompile Include="core\map.cpp" />
+    <ClCompile Include="core\module.cpp" />
+    <ClCompile Include="core\modulelist.cpp" />
+    <ClCompile Include="core\moduletile.cpp" />
+    <ClCompile Include="core\ship.cpp" />
+    <ClCompile Include="core\shiplist.cpp" />
+    <ClCompile Include="core\shipmodule.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="client\client.hpp" />
+    <ClInclude Include="core\core.hpp" />
+    <ClInclude Include="core\drawer.hpp" />
+    <ClInclude Include="core\graphics\AnimatedSprite.hpp" />
+    <ClInclude Include="core\graphics\BaseSprite.hpp" />
+    <ClInclude Include="core\graphics\DynamicSprite.hpp" />
+    <ClInclude Include="core\graphics\LayeredSprite.hpp" />
+    <ClInclude Include="core\graphics\RenderedSprite.hpp" />
+    <ClInclude Include="core\graphics\SpriteManager.hpp" />
+    <ClInclude Include="core\graphics\SpriteSet.hpp" />
+    <ClInclude Include="core\graphics\StaticSprite.hpp" />
+    <ClInclude Include="core\inputhandler.hpp" />
+    <ClInclude Include="core\map.hpp" />
+    <ClInclude Include="core\module.hpp" />
+    <ClInclude Include="core\modulelist.hpp" />
+    <ClInclude Include="core\moduletile.hpp" />
+    <ClInclude Include="core\ship.hpp" />
+    <ClInclude Include="core\shiplist.hpp" />
+    <ClInclude Include="core\shipmodule.hpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
