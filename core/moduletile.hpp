@@ -1,8 +1,12 @@
 #ifndef _MODULETILE_
 #define _MODULETILE_
 
+#include "graphics/BaseSprite.hpp"
+
 enum ModuleTileType{
-    Manned, Free, Blocked
+    mtt_Manned,
+    mtt_Free = 0,
+    mtt_Blocked
 };
 
 class ModuleTile{
@@ -11,6 +15,9 @@ public:
 
     int x;
     int y;
+
+    BaseSprite* sprite;
+
     ModuleTileType type;
 };
 

@@ -7,6 +7,7 @@
 #include "pugixml.hpp"
 
 #include "moduletile.hpp"
+#include "graphics/SpriteManager.hpp"
 #include "module.hpp"
 
 /**
@@ -17,6 +18,7 @@ public:
     std::vector<Module*> modules;
 
     ModuleList();
+    void load(SpriteManager* sprites);
 };
 
 #endif

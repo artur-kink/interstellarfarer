@@ -23,6 +23,11 @@ int Client::initSDL(){
     spriteManager.renderer = renderer;
     spriteManager.loadRawSprites("sprites");
 
+    ships.load(&spriteManager);
+    modules.load(&spriteManager);
+
+    ship.init(ships.ships.at(0));
+
     return 0;
 }
 
@@ -76,9 +81,19 @@ void Client::update(){
         int tileX = (inputHandler.mouseX/32);
         int tileY = (inputHandler.mouseY/32);
 
-        if(tileX < ship.map.width && tileY < ship.map.height)
-            ship.map.tiles[tileY*ship.map.width + tileX] = 1;
-    }else if(inputHandler.rightDown){
+        if(tileX < ship.map.width && tileY < ship.map.height){
+            if(inputHandler.isKeyPressed(SDL_SCANCODE_R)){
+                if(ship.map.tiles[tileY*ship.map.width + tileX] == 1){
+                    cout << "Adding module" << endl;
+                    ship.placeModule(new ShipModule(modules.modules.at(0)), tileX, tileY);
+                    ship.map.tiles[tileY*ship.map.width + tileX] = 2;
+                }
+            }else{
+                ship.map.tiles[tileY*ship.map.width + tileX] = 1;
+            }
+        }
+    }
+    if(inputHandler.rightDown){
         int tileX = (inputHandler.mouseX/32);
         int tileY = (inputHandler.mouseY/32);
 
@@ -92,11 +107,6 @@ void Client::draw(){
     SDL_RenderClear(renderer);
 
     Drawer::draw(renderer, &ship);
-
-    SDL_Rect rect;
-    rect.w = rect.h = 32;
-    rect.x = rect.y = 0;
-    spriteManager.getSprite("rocket")->draw(renderer, &rect);
 
     SDL_RenderPresent(renderer);
 }

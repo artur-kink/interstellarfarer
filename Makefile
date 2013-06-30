@@ -11,6 +11,8 @@ CORE_SOURCES=core/ship.cpp \
     core/drawer.cpp \
     core/moduletile.cpp \
     core/module.cpp \
+    core/shipmodule.cpp \
+    core/shiplist.cpp \
     core/modulelist.cpp \
     core/graphics/BaseSprite.cpp \
     core/graphics/StaticSprite.cpp \
@@ -31,9 +33,13 @@ CLIENT_OBJECTS=$(CLIENT_SOURCES:.cpp=.o)
 all: client
 
 client: $(CLIENT_OBJECTS)
+	@echo 
+	@echo "Creating client executable"
 	$(CC) -Wl,-rpath,. -o debug/client $(CLIENT_OBJECTS) $(LIBRARIES)
 
 $(CLIENT_OBJECTS): %.o: %.cpp
+	@echo ""
+	@echo "Compiling $@"
 	$(CC) -g -c $(INCLUDES) -MMD -MP -MF $@.d -o $@ $<
 
 clean:

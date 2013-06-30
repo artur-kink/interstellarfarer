@@ -1,9 +1,13 @@
 <spriteset>
     <spritesheets>
         <spritesheet name="rocket.bmp" />
+        <spritesheet name="ship.bmp" />
+        <spritesheet name="greenShip.bmp" />
     </spritesheets>
 
     <sprites>
-        <sprite name="rocket" sheet="rocket.bmp" x="0" y="0" width="32" height="32" />
+        <sprite name="ship" sheet="ship.bmp" x="0" y="0" width="540" height="560" />
+	<sprite name="rocket" sheet="rocket.bmp" x="0" y="0" width="32" height="32" />
+        <sprite name="greenship" sheet="greenShip.bmp" x="0" y="0" width="640" height="480" />
     </sprites>
 </spriteset>

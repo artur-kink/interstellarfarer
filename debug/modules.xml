@@ -1,16 +1,16 @@
 
 <modules>
-    <module name="sample" price="1" health="1" power="1" extension="0" extendable="1" store_icon="rocket.png" hud_icon="rocket.png" overlay_icon="rocket.png" >
+    <module name="sample" price="1" health="1" power="1" extension="0" extendable="1" store_icon="rocket" hud_icon="rocket" overlay_icon="rocket" >
         <tiles>
-             <tile x="0" y="0" type="manned" />
-             <tile x="0" y="1" type="free" />
+             <tile x="0" y="0" type="manned" image="rocket" />
+             <tile x="0" y="1" type="free" image="rocket" />
         </tiles>
         <extensions limit="1">
              <extension name="sample_extension" type="connected"/>
         </extensions>
     </module>
 
-    <module name="sample_extension" price="10" power="1" power="1" extension="1" extendable="0" store_icon="rocket.png" hud_icon="rocket.png">
+    <module name="sample_extension" price="10" power="1" power="1" extension="1" extendable="0" store_icon="rocket" hud_icon="rocket">
         <tiles>
             <tile x="0" y="0" type="free" />
         </tiles>

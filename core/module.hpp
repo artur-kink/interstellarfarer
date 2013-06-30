@@ -5,6 +5,7 @@
 #include <vector>
 
 #include "moduletile.hpp"
+#include "graphics/BaseSprite.hpp"
 
 class Module{
 public:
@@ -12,6 +13,10 @@ public:
     std::string storeIcon;
     std::string hudIcon;
     std::string overlayIcon;
+
+    BaseSprite* storeSprite;
+    BaseSprite* hudSprite;
+    BaseSprite* overlaySprite;
 
     int price;
     int health;

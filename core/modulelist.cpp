@@ -1,11 +1,15 @@
 #include "modulelist.hpp"
 
+
+ModuleList::ModuleList(){
+
+}
+
 /**
  * Initialize module list by loading all module definitions in
  * modules.xml
  */
-ModuleList::ModuleList(){
-
+void ModuleList::load(SpriteManager* sprites){
     std::cout << "Loading modules" << std::endl;
     pugi::xml_document doc;
     pugi::xml_parse_result loadResult = doc.load_file("modules.xml");
@@ -22,12 +26,15 @@ ModuleList::ModuleList(){
 
         module->hudIcon = moduleNode.attribute("hud_icon").value();
         std::cout << "\tHud Icon: " << module->hudIcon << std::endl;
+        module->hudSprite = sprites->getSprite(module->hudIcon.c_str());
 
         module->storeIcon = moduleNode.attribute("store_icon").value();
+        module->storeSprite = sprites->getSprite(module->storeIcon.c_str());
         std::cout << "\tStore Icon: " << module->storeIcon << std::endl;
 
         if(moduleNode.attribute("overlay_icon")){
             module->overlayIcon = moduleNode.attribute("overlay_icon").value();
+            module->overlaySprite = sprites->getSprite(module->overlayIcon.c_str());
             std::cout << "\tOverlay Icon: " << module->overlayIcon << std::endl;
         }
 
@@ -47,6 +54,9 @@ ModuleList::ModuleList(){
         for (pugi::xml_node tileNode = tilesNode.first_child(); tileNode; tileNode = tileNode.next_sibling())
         {
             ModuleTile tile;
+            tile.x = tileNode.attribute("x").as_int();
+            tile.y = tileNode.attribute("y").as_int();
+            tile.sprite = sprites->getSprite(tileNode.attribute("image").value());
             module->tiles.push_back(tile);
             std::cout << "\t\tTile\tx: " << tile.x << "\ty: " << tile.y << "\tType: " << tile.type << std::endl;
         }
@@ -59,5 +69,4 @@ ModuleList::ModuleList(){
         std::cout << std::endl;
     }
     std::cout << "Finished loading modules." << std::endl;
-
 }

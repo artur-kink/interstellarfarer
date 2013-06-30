@@ -9,7 +9,9 @@
 #include "../core/inputhandler.hpp"
 #include "../core/drawer.hpp"
 
+#include "../core/shiplist.hpp"
 #include "../core/modulelist.hpp"
+#include "../core/shipmodule.hpp"
 
 #include "../core/graphics/SpriteManager.hpp"
 
@@ -28,6 +30,7 @@ protected:
 
     Ship ship;
 
+    ShipList ships;
     ModuleList modules;
 
     SpriteManager spriteManager;

@@ -2,5 +2,6 @@
 
 ModuleTile::ModuleTile(){
     x = y = 0;
-    type = Free;
+    type = mtt_Free;
+    sprite = 0;
 }

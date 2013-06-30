@@ -1,0 +1,15 @@
+<ships>
+    <ship name="greeny da ship" image="greenship">
+        <map width="30" height="30">
+	    <tile x="8" y="0" free="1" />
+	    <tile x="8" y="1" free="1" />
+	    <tile x="8" y="2" free="1" />
+	    <tile x="8" y="3" free="1" />
+	    <tile x="8" y="4" free="1" />
+	    <tile x="8" y="5" free="1" />
+	    <tile x="8" y="6" free="1" />
+	    <tile x="8" y="7" free="1" />
+	    <tile x="8" y="8" free="1" />
+	</map>
+    </ship>
+</ships>

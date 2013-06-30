@@ -3,6 +3,12 @@
 
 #include "core.hpp"
 
+enum TileType{
+    tt_Free = 0,
+    tt_Empty = 1,
+    tt_Blocked = 255
+};
+
 class Map{
 protected:
 
