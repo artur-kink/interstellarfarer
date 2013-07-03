@@ -24,18 +24,18 @@ void ModuleList::load(SpriteManager* sprites){
         module->name = moduleNode.attribute("name").value();
         std::cout << "Module: " << module->name << std::endl;
 
-        module->hudIcon = moduleNode.attribute("hud_icon").value();
-        std::cout << "\tHud Icon: " << module->hudIcon << std::endl;
-        module->hudSprite = sprites->getSprite(module->hudIcon.c_str());
+        std::string hudIcon = moduleNode.attribute("hud_icon").value();
+        std::cout << "\tHud Icon: " << hudIcon << std::endl;
+        module->hudSprite = sprites->getSprite(hudIcon.c_str());
 
-        module->storeIcon = moduleNode.attribute("store_icon").value();
-        module->storeSprite = sprites->getSprite(module->storeIcon.c_str());
-        std::cout << "\tStore Icon: " << module->storeIcon << std::endl;
+        std::string storeIcon = moduleNode.attribute("store_icon").value();
+        module->storeSprite = sprites->getSprite(storeIcon.c_str());
+        std::cout << "\tStore Icon: " << storeIcon << std::endl;
 
         if(moduleNode.attribute("overlay_icon")){
-            module->overlayIcon = moduleNode.attribute("overlay_icon").value();
-            module->overlaySprite = sprites->getSprite(module->overlayIcon.c_str());
-            std::cout << "\tOverlay Icon: " << module->overlayIcon << std::endl;
+            std::string overlayIcon = moduleNode.attribute("overlay_icon").value();
+            module->overlaySprite = sprites->getSprite(overlayIcon.c_str());
+            std::cout << "\tOverlay Icon: " << overlayIcon << std::endl;
         }
 
         module->health = moduleNode.attribute("health").as_int();

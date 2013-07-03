@@ -86,10 +86,10 @@ void Client::update(){
                 if(ship.map.tiles[tileY*ship.map.width + tileX] == 1){
                     cout << "Adding module" << endl;
                     ship.placeModule(new ShipModule(modules.modules.at(0)), tileX, tileY);
-                    ship.map.tiles[tileY*ship.map.width + tileX] = 2;
                 }
             }else{
-                ship.map.tiles[tileY*ship.map.width + tileX] = 1;
+                if(ship.map.tiles[tileY*ship.map.width + tileX] != tt_Blocked)
+                    ship.map.tiles[tileY*ship.map.width + tileX] = 1;
             }
         }
     }
@@ -98,7 +98,8 @@ void Client::update(){
         int tileY = (inputHandler.mouseY/32);
 
         if(tileX < ship.map.width && tileY < ship.map.height)
-            ship.map.tiles[tileY*ship.map.width + tileX] = 0;
+            if(ship.map.tiles[tileY*ship.map.width + tileX] != tt_Blocked)
+                ship.map.tiles[tileY*ship.map.width + tileX] = 0;
     }
 }
 

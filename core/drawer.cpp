@@ -13,6 +13,11 @@ void Drawer::draw(SDL_Renderer* renderer, Ship* ship){
         for(byte c = 0; c < ship->map.width; c++){
 
             if(ship->map.tiles[r*ship->map.width + c] == 1){
+                SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+                rect.x = c*32;
+                SDL_RenderFillRect(renderer, &rect);
+            }else if(ship->map.tiles[r*ship->map.width + c] == 255){
+                SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
                 rect.x = c*32;
                 SDL_RenderFillRect(renderer, &rect);
             }

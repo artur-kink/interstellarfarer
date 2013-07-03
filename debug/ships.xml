@@ -1,7 +1,6 @@
 <ships>
     <ship name="greeny da ship" image="greenship">
         <map width="30" height="30">
-	    <tile x="8" y="0" free="1" />
 	    <tile x="8" y="1" free="1" />
 	    <tile x="8" y="2" free="1" />
 	    <tile x="8" y="3" free="1" />
@@ -10,6 +9,55 @@
 	    <tile x="8" y="6" free="1" />
 	    <tile x="8" y="7" free="1" />
 	    <tile x="8" y="8" free="1" />
+	    <tile x="8" y="9" free="1" />
+	    <tile x="8" y="10" free="1" />
+	    <tile x="8" y="11" free="1" />
+
+	    <tile x="7" y="2" free="1" />
+	    <tile x="7" y="3" free="0" />
+	    <tile x="7" y="4" free="1" />
+	    <tile x="7" y="5" free="1" />
+	    <tile x="7" y="6" free="1" />
+	    
+	    <tile x="9" y="1" free="1" />
+	    <tile x="9" y="2" free="1" />
+	    <tile x="9" y="3" free="1" />
+	    <tile x="9" y="4" free="1" />
+	    <tile x="9" y="5" free="1" />
+	    <tile x="9" y="6" free="1" />
+	    <tile x="9" y="7" free="1" />
+	    <tile x="9" y="8" free="1" />
+	    <tile x="9" y="9" free="1" />
+	    <tile x="9" y="10" free="1" />
+	    <tile x="9" y="11" free="1" />
+	    <tile x="9" y="12" free="1" />
+	    <tile x="9" y="13" free="1" />
+	    
+	    <tile x="10" y="1" free="1" />
+	    <tile x="10" y="2" free="1" />
+	    <tile x="10" y="3" free="1" />
+	    <tile x="10" y="4" free="1" />
+	    <tile x="10" y="5" free="1" />
+	    <tile x="10" y="6" free="1" />
+	    <tile x="10" y="7" free="1" />
+	    <tile x="10" y="8" free="1" />
+	    <tile x="10" y="9" free="1" />
+	    <tile x="10" y="10" free="1" />
+	    <tile x="10" y="11" free="1" />
+	    <tile x="10" y="12" free="1" />
+	    
+	    <tile x="11" y="1" free="1" />
+	    <tile x="11" y="2" free="1" />
+	    <tile x="11" y="3" free="1" />
+	    <tile x="11" y="4" free="1" />
+	    <tile x="11" y="5" free="1" />
+	    <tile x="11" y="6" free="1" />
+	    <tile x="11" y="7" free="1" />
+	    <tile x="11" y="8" free="1" />
+	    <tile x="11" y="9" free="1" />
+	    <tile x="11" y="10" free="1" />
+	    <tile x="11" y="11" free="1" />
+	    
 	</map>
     </ship>
 </ships>

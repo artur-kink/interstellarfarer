@@ -8,6 +8,10 @@ ShipModule::ShipModule(Module* m){
     init(m);
 }
 
+/**
+ * Initialize this ShipModule with given base Module type.
+ * @param m Module type of this ShipModule.
+ */
 void ShipModule::init(Module* m){
     module = m;
 
@@ -15,6 +19,9 @@ void ShipModule::init(Module* m){
     health = module->health;
 }
 
+/**
+ * Draw ship module to renderer.
+ */
 void ShipModule::draw(SDL_Renderer* renderer){
 
     SDL_Rect rect;

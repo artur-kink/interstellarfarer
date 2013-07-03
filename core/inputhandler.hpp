@@ -4,9 +4,9 @@
 #include <SDL_mouse.h>
 #include <SDL_keyboard.h>
 
-///
-/// Mouse and keyboard input handler.
-///
+/**
+ * Mouse and keyboard input handler.
+ */
 class InputHandler{
 private:
     unsigned int lastUpdateTime;

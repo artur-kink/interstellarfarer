@@ -5,10 +5,15 @@
 #include "ship.hpp"
 #include "graphics/SpriteManager.hpp"
 
+/**
+ * List of Ship definitions
+ * @see Ship
+ */
 class ShipList{
 private:
 
 public:
+    /** Ship definitions */
     std::vector<Ship*> ships;
 
     ShipList();

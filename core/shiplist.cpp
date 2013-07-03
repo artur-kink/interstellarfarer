@@ -4,6 +4,10 @@ ShipList::ShipList(){
 
 }
 
+/**
+ * Load Ship definitions into this ShipList.
+ * @param sprites SpriteManager for sprite access.
+ */
 void ShipList::load(SpriteManager* sprites){
     std::cout << "Loading ships" << std::endl;
     pugi::xml_document doc;

@@ -7,12 +7,15 @@
 #include "moduletile.hpp"
 #include "graphics/BaseSprite.hpp"
 
+/**
+ * A Module is an object that can be placed
+ * on a Ship, such as weapons etc...
+ * @see Ship
+ */
 class Module{
 public:
+    /** Module name */
     std::string name;
-    std::string storeIcon;
-    std::string hudIcon;
-    std::string overlayIcon;
 
     BaseSprite* storeSprite;
     BaseSprite* hudSprite;
